@@ -1,0 +1,15 @@
+template header
+eventType
+pocRule
+pocRes
+package rules;
+global com.drools.poc.model.Discount discount;
+dialect "mvel"
+template "droolRule"
+rule "row_@{row.rowNumber}"
+    when
+    	@{eventType}(@{pocRule})
+	then
+		 discount.setRuleResult('@{pocRes}');
+    end
+end template

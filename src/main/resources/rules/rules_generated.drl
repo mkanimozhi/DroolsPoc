@@ -1,0 +1,61 @@
+package rules;
+global com.drools.poc.model.Discount discount;
+dialect "mvel"
+
+rule "row_0"
+    when
+    	com.drools.poc.model.OrderEvent(deptName=='Admin')
+	then
+		 discount.setRuleResult('10%');
+    end
+
+rule "row_1"
+    when
+    	com.drools.poc.model.OrderEvent(deptName=='Open')
+	then
+		 discount.setRuleResult('10%');
+    end
+
+rule "row_2"
+    when
+    	com.drools.poc.model.OrderEvent(deptName=='junior')
+	then
+		 discount.setRuleResult('20%');
+    end
+
+rule "row_3"
+    when
+    	com.drools.poc.model.OrderEvent(deptName=='young')
+	then
+		 discount.setRuleResult('2%');
+    end
+
+rule "row_4"
+    when
+    	com.drools.poc.model.OrderEvent(deptName=='old')
+	then
+		 discount.setRuleResult('2%');
+    end
+
+rule "row_5"
+    when
+    	com.drools.poc.model.OrderEvent(deptName=='security')
+	then
+		 discount.setRuleResult('3%');
+    end
+
+rule "row_6"
+    when
+    	com.drools.poc.model.OrderEvent(designation=='watcher')
+	then
+		 discount.setRuleResult('4%');
+    end
+
+rule "row_7"
+    when
+    	com.drools.poc.model.OrderEvent(designation=='president')
+	then
+		 discount.setRuleResult('100%');
+    end
+
+
